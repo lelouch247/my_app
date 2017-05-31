@@ -1,0 +1,24 @@
+<h1 class="text-center">People</h1>
+<%= link_to 'Add a person', new_person_path, class:"btn btn-success btn-lg" %>
+<table class="table table-bordered">
+  <hr />
+  <tr>
+    <th><h1>Name</h1></th>
+    <th><h1>Edit</h1></th>
+    <th><h1>Delete</h1></th>
+  </tr>
+
+    <% if @people.empty? %>
+      <h3> There is no one on your list! Please enter their name and info!
+    <% else %>
+    <% @people.each do |person| %>
+
+      <tr>
+        <td><%= link_to person.name, person_path(person), class:"btn btn-primary" %></td>
+        <td><%= link_to 'Edit Info', edit_person_path(person), class:"btn btn-info"%></td>
+        <td><%= link_to 'Delete', person_path(person), method: :delete, class:"btn btn-danger" %></td>
+      </tr>
+
+    <% end %>
+  <% end %>
+  </table>

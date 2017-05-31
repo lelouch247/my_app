@@ -1,0 +1,26 @@
+
+<h1 class="text-center"> Person's Info </h1>
+
+<div class="container">
+
+<table class ='table'>
+
+  <tr>
+    <th>
+      <%= @people.name %>
+    </th>
+  </tr>
+
+  <tr>
+    <td>Hair Color: <%= @people.hair_color %> </td>
+    <td>Race: <%= @people.race %> </td>
+    <td>Age: <%= @people.age %> </td>
+    <td>Alive: <%= @people.alive ? "Yes" : "No" %> </td>
+  </tr>
+
+</table>
+</div>
+
+  <div class='container'>
+    <%= link_to "List of People", root_path %>
+  </div>
